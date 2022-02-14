@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_oathkeeper_client
-from ory_oathkeeper_client.model.rule_match import RuleMatch
+from ory_oathkeeper_client.model.inline_response503 import InlineResponse503
 
 
-class TestRuleMatch(unittest.TestCase):
-    """RuleMatch unit test stubs"""
+class TestInlineResponse503(unittest.TestCase):
+    """InlineResponse503 unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestRuleMatch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testRuleMatch(self):
-        """Test RuleMatch"""
+    def testInlineResponse503(self):
+        """Test InlineResponse503"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = RuleMatch()  # noqa: E501
+        # model = InlineResponse503()  # noqa: E501
         pass
 
 

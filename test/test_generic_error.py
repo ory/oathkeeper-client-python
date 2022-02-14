@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ory_oathkeeper_client
-from ory_oathkeeper_client.model.rule_match import RuleMatch
+from ory_oathkeeper_client.model.generic_error import GenericError
 
 
-class TestRuleMatch(unittest.TestCase):
-    """RuleMatch unit test stubs"""
+class TestGenericError(unittest.TestCase):
+    """GenericError unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestRuleMatch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testRuleMatch(self):
-        """Test RuleMatch"""
+    def testGenericError(self):
+        """Test GenericError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = RuleMatch()  # noqa: E501
+        # model = GenericError()  # noqa: E501
         pass
 
 
