@@ -13,13 +13,11 @@ import sys
 import unittest
 
 import ory_oathkeeper_client
-from ory_oathkeeper_client.model.json_web_key import JsonWebKey
-globals()['JsonWebKey'] = JsonWebKey
-from ory_oathkeeper_client.model.json_web_key_set import JsonWebKeySet
+from ory_oathkeeper_client.model.inline_response500 import InlineResponse500
 
 
-class TestJsonWebKeySet(unittest.TestCase):
-    """JsonWebKeySet unit test stubs"""
+class TestInlineResponse500(unittest.TestCase):
+    """InlineResponse500 unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +25,10 @@ class TestJsonWebKeySet(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testJsonWebKeySet(self):
-        """Test JsonWebKeySet"""
+    def testInlineResponse500(self):
+        """Test InlineResponse500"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = JsonWebKeySet()  # noqa: E501
+        # model = InlineResponse500()  # noqa: E501
         pass
 
 
