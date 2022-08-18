@@ -1,4 +1,4 @@
-# InlineResponse500
+# GetWellKnownJSONWebKeys500Response
 
 
 ## Properties
