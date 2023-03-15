@@ -9,26 +9,26 @@
 """
 
 
-import sys
 import unittest
 
 import ory_oathkeeper_client
-from ory_oathkeeper_client.model.rule_handler import RuleHandler
+from ory_oathkeeper_client.api.version_api import VersionApi  # noqa: E501
 
 
-class TestRuleHandler(unittest.TestCase):
-    """RuleHandler unit test stubs"""
+class TestVersionApi(unittest.TestCase):
+    """VersionApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = VersionApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testRuleHandler(self):
-        """Test RuleHandler"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = RuleHandler()  # noqa: E501
+    def test_get_version(self):
+        """Test case for get_version
+
+        Get service version  # noqa: E501
+        """
         pass
 
 

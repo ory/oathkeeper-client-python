@@ -9,26 +9,33 @@
 """
 
 
-import sys
 import unittest
 
 import ory_oathkeeper_client
-from ory_oathkeeper_client.model.rule_handler import RuleHandler
+from ory_oathkeeper_client.api.health_api import HealthApi  # noqa: E501
 
 
-class TestRuleHandler(unittest.TestCase):
-    """RuleHandler unit test stubs"""
+class TestHealthApi(unittest.TestCase):
+    """HealthApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = HealthApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testRuleHandler(self):
-        """Test RuleHandler"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = RuleHandler()  # noqa: E501
+    def test_is_instance_alive(self):
+        """Test case for is_instance_alive
+
+        Check alive status  # noqa: E501
+        """
+        pass
+
+    def test_is_instance_ready(self):
+        """Test case for is_instance_ready
+
+        Check readiness status  # noqa: E501
+        """
         pass
 
 

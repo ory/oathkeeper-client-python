@@ -1,11 +1,12 @@
-# GetWellKnownJSONWebKeys500Response
+# GenericError
 
+The standard error format
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **int** |  | [optional] 
-**details** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
+**details** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type,)}]** |  | [optional] 
 **message** | **str** |  | [optional] 
 **reason** | **str** |  | [optional] 
 **request** | **str** |  | [optional] 
