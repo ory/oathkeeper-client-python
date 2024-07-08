@@ -19,11 +19,11 @@ This endpoint returns a 200 status code when the HTTP server is up running. This
 
 
 ```python
-import time
 import ory_oathkeeper_client
-from ory_oathkeeper_client.api import health_api
-from ory_oathkeeper_client.model.health_status import HealthStatus
+from ory_oathkeeper_client.models.health_status import HealthStatus
+from ory_oathkeeper_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_oathkeeper_client.Configuration(
@@ -32,21 +32,23 @@ configuration = ory_oathkeeper_client.Configuration(
 
 
 # Enter a context with an instance of the API client
-with ory_oathkeeper_client.ApiClient() as api_client:
+with ory_oathkeeper_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = health_api.HealthApi(api_client)
+    api_instance = ory_oathkeeper_client.HealthApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Check alive status
         api_response = api_instance.is_instance_alive()
+        print("The response of HealthApi->is_instance_alive:\n")
         pprint(api_response)
-    except ory_oathkeeper_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HealthApi->is_instance_alive: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -61,7 +63,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/plain
-
 
 ### HTTP response details
 
@@ -83,12 +84,11 @@ This endpoint returns a 200 status code when the HTTP server is up running and t
 
 
 ```python
-import time
 import ory_oathkeeper_client
-from ory_oathkeeper_client.api import health_api
-from ory_oathkeeper_client.model.health_not_ready_status import HealthNotReadyStatus
-from ory_oathkeeper_client.model.health_status import HealthStatus
+from ory_oathkeeper_client.models.health_status import HealthStatus
+from ory_oathkeeper_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_oathkeeper_client.Configuration(
@@ -97,21 +97,23 @@ configuration = ory_oathkeeper_client.Configuration(
 
 
 # Enter a context with an instance of the API client
-with ory_oathkeeper_client.ApiClient() as api_client:
+with ory_oathkeeper_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = health_api.HealthApi(api_client)
+    api_instance = ory_oathkeeper_client.HealthApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Check readiness status
         api_response = api_instance.is_instance_ready()
+        print("The response of HealthApi->is_instance_ready:\n")
         pprint(api_response)
-    except ory_oathkeeper_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HealthApi->is_instance_ready: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -126,7 +128,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/plain
-
 
 ### HTTP response details
 

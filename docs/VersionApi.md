@@ -18,11 +18,11 @@ This endpoint returns the service version typically notated using semantic versi
 
 
 ```python
-import time
 import ory_oathkeeper_client
-from ory_oathkeeper_client.api import version_api
-from ory_oathkeeper_client.model.version import Version
+from ory_oathkeeper_client.models.version import Version
+from ory_oathkeeper_client.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ory_oathkeeper_client.Configuration(
@@ -31,21 +31,23 @@ configuration = ory_oathkeeper_client.Configuration(
 
 
 # Enter a context with an instance of the API client
-with ory_oathkeeper_client.ApiClient() as api_client:
+with ory_oathkeeper_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = version_api.VersionApi(api_client)
+    api_instance = ory_oathkeeper_client.VersionApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Get service version
         api_response = api_instance.get_version()
+        print("The response of VersionApi->get_version:\n")
         pprint(api_response)
-    except ory_oathkeeper_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling VersionApi->get_version: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -60,7 +62,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
