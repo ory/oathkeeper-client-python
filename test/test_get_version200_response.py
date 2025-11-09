@@ -15,10 +15,10 @@
 
 import unittest
 
-from ory_oathkeeper_client.models.health_not_ready_status import HealthNotReadyStatus
+from ory_oathkeeper_client.models.get_version200_response import GetVersion200Response
 
-class TestHealthNotReadyStatus(unittest.TestCase):
-    """HealthNotReadyStatus unit test stubs"""
+class TestGetVersion200Response(unittest.TestCase):
+    """GetVersion200Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,26 @@ class TestHealthNotReadyStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> HealthNotReadyStatus:
-        """Test HealthNotReadyStatus
+    def make_instance(self, include_optional) -> GetVersion200Response:
+        """Test GetVersion200Response
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `HealthNotReadyStatus`
+        # uncomment below to create an instance of `GetVersion200Response`
         """
-        model = HealthNotReadyStatus()
+        model = GetVersion200Response()
         if include_optional:
-            return HealthNotReadyStatus(
-                errors = {
-                    'key' : ''
-                    }
+            return GetVersion200Response(
+                version = ''
             )
         else:
-            return HealthNotReadyStatus(
+            return GetVersion200Response(
+                version = '',
         )
         """
 
-    def testHealthNotReadyStatus(self):
-        """Test HealthNotReadyStatus"""
+    def testGetVersion200Response(self):
+        """Test GetVersion200Response"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

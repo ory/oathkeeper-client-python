@@ -15,7 +15,11 @@ Method | HTTP request | Description
 
 Access Control Decision API
 
-> This endpoint works with all HTTP Methods (GET, POST, PUT, ...) and matches every path prefixed with /decisions.  This endpoint mirrors the proxy capability of ORY Oathkeeper's proxy functionality but instead of forwarding the request to the upstream server, returns 200 (request should be allowed), 401 (unauthorized), or 403 (forbidden) status codes. This endpoint can be used to integrate with other API Proxies like Ambassador, Kong, Envoy, and many more.
+> This endpoint works with all HTTP Methods (GET, POST, PUT, ...) and matches every path prefixed with /decisions.
+
+This endpoint mirrors the proxy capability of ORY Oathkeeper's proxy functionality but instead of forwarding the
+request to the upstream server, returns 200 (request should be allowed), 401 (unauthorized), or 403 (forbidden)
+status codes. This endpoint can be used to integrate with other API Proxies like Ambassador, Kong, Envoy, and many more.
 
 ### Example
 
@@ -215,7 +219,8 @@ No authorization required
 
 List All Rules
 
-This method returns an array of all rules that are stored in the backend. This is useful if you want to get a full view of what rules you have currently in place.
+This method returns an array of all rules that are stored in the backend. This is useful if you want to get a full
+view of what rules you have currently in place.
 
 ### Example
 

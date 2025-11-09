@@ -18,23 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GenericError(BaseModel):
+class IsReady503Response(BaseModel):
     """
-    The standard error format
+    IsReady503Response
     """ # noqa: E501
-    code: Optional[StrictInt] = None
-    details: Optional[List[Dict[str, Any]]] = None
-    message: Optional[StrictStr] = None
-    reason: Optional[StrictStr] = None
-    request: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
+    errors: Dict[str, StrictStr] = Field(description="Errors contains a list of errors that caused the not ready status.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["code", "details", "message", "reason", "request", "status"]
+    __properties: ClassVar[List[str]] = ["errors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +49,7 @@ class GenericError(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GenericError from a JSON string"""
+        """Create an instance of IsReady503Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -86,7 +81,7 @@ class GenericError(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GenericError from a dict"""
+        """Create an instance of IsReady503Response from a dict"""
         if obj is None:
             return None
 
@@ -94,12 +89,7 @@ class GenericError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "details": obj.get("details"),
-            "message": obj.get("message"),
-            "reason": obj.get("reason"),
-            "request": obj.get("request"),
-            "status": obj.get("status")
+            "errors": obj.get("errors")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
